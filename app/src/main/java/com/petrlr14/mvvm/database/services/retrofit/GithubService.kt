@@ -9,11 +9,11 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-const val GITHUB_API_BASE_URI = "https://api.github.com"
+const val GITHUB_API_BASE_URI = "https://api.github.com/"
 
 interface GithubService {
 
-    @GET("/users/{user}/repos")
+    @GET("users/{user}/repos")
     fun getRepos(@Path("user") user: String): Deferred<Response<List<GitHubRepo>>>
 
     companion object {
